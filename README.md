@@ -1,0 +1,1 @@
+# The-East-School-and-College-Jehangira-NOWSHERA-

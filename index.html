@@ -1,0 +1,2210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The East School & College Jehangira | Nowshera, KP</title>
+  <link rel="icon" type="image/png" href="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#0d472a', /* Islamic Deep Green */
+              950: '#072e1b'
+            },
+            gold: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309'
+            },
+            cream: '#fdfbf7'
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            arabic: ['Amiri', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #0d472a;
+      --accent-color: #d97706;
+    }
+    .theme-accent-gold {
+      --primary-color: #92400e;
+      --accent-color: #d97706;
+    }
+    .theme-accent-blue {
+      --primary-color: #0f375a;
+      --accent-color: #2563eb;
+    }
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(7, 46, 27, 0.94) 0%, rgba(13, 71, 42, 0.88) 55%, rgba(6, 36, 22, 0.95) 100%);
+    }
+    .islamic-pattern {
+      background-color: #0d472a;
+      background-image: radial-gradient(rgba(217, 119, 6, 0.15) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    /* Toast animations */
+    .toast-slide {
+      animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 font-sans flex flex-col min-h-screen">
+
+  <!-- TOP BAR: Important Notice & Contacts -->
+  <div class="bg-brand-950 text-amber-200 text-xs py-2 px-4 border-b border-gold-600/30">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-gold-400"></i> Swabi Road, Jehangira, Nowshera, KP</span>
+        <span class="hidden md:inline-flex items-center gap-1.5"><i class="fa-solid fa-phone text-gold-400"></i> +92 923 510760</span>
+        <span class="hidden lg:inline-flex items-center gap-1.5"><i class="fa-solid fa-envelope text-gold-400"></i> eastjehangira@yahoo.com</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span class="bg-emerald-900/80 text-emerald-200 px-2 py-0.5 rounded text-[11px] font-semibold border border-emerald-700/50">
+          <i class="fa-solid fa-mosque mr-1"></i> Islamic Values & Separate Campuses
+        </span>
+        <button onclick="openModal('envModal')" class="hover:text-white transition flex items-center gap-1 text-[11px] underline">
+          <i class="fa-solid fa-code"></i> Dev Stack & .env
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md border-b border-gold-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- LOGO & BRAND TITLE -->
+        <a href="#home" onclick="showPage('home')" class="flex items-center gap-3 group">
+          <img 
+            src="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef" 
+            alt="The East School & College Jehangira Crest Logo" 
+            class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-sm"
+          >
+          <div class="flex flex-col">
+            <span class="font-serif font-extrabold text-lg sm:text-xl text-brand-900 dark:text-emerald-400 leading-tight tracking-wide">THE EAST</span>
+            <span class="text-xs sm:text-sm font-semibold text-gold-600 dark:text-gold-400 tracking-wider">SCHOOL & COLLEGE</span>
+            <span class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Jehangira, Nowshera</span>
+          </div>
+        </a>
+
+        <!-- DESKTOP NAVIGATION -->
+        <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          <button onclick="showPage('home')" data-nav="home" class="nav-item px-3 py-2 text-sm font-semibold rounded-lg text-brand-900 dark:text-slate-200 hover:text-gold-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Home</button>
+          <button onclick="showPage('about')" data-nav="about" class="nav-item px-3 py-2 text-sm font-semibold rounded-lg text-slate-700 dark:text-slate-300 hover:text-gold-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition">About & Leadership</button>
+          <button onclick="showPage('academics')" data-nav="academics" class="nav-item px-3 py-2 text-sm font-semibold rounded-lg text-slate-700 dark:text-slate-300 hover:text-gold-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Academics</button>
+          <button onclick="showPage('gallery')" data-nav="gallery" class="nav-item px-3 py-2 text-sm font-semibold rounded-lg text-slate-700 dark:text-slate-300 hover:text-gold-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Gallery</button>
+          <button onclick="showPage('reviews')" data-nav="reviews" class="nav-item px-3 py-2 text-sm font-semibold rounded-lg text-slate-700 dark:text-slate-300 hover:text-gold-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Reviews</button>
+          <button onclick="showPage('contact')" data-nav="contact" class="nav-item px-3 py-2 text-sm font-semibold rounded-lg text-slate-700 dark:text-slate-300 hover:text-gold-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Contact</button>
+          <button onclick="showPage('settings')" data-nav="settings" class="nav-item px-3 py-2 text-sm font-semibold rounded-lg text-slate-700 dark:text-slate-300 hover:text-gold-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Theme and Accent Settings">
+            <i class="fa-solid fa-sliders"></i>
+          </button>
+        </nav>
+
+        <!-- USER AUTH STATUS & CTAs -->
+        <div class="hidden md:flex items-center space-x-3">
+          <div id="authNavContainer">
+            <!-- Dynamically populated by JS: either Sign In button or Profile pill -->
+          </div>
+          <button onclick="openChat()" class="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-amber-500 hover:from-gold-700 hover:to-amber-600 text-white font-medium px-4 py-2 rounded-full text-xs sm:text-sm shadow-md hover:shadow-lg transition">
+            <i class="fa-solid fa-sparkles"></i>
+            <span>Ask East AI</span>
+          </button>
+        </div>
+
+        <!-- MOBILE HAMBURGER -->
+        <div class="flex items-center gap-2 lg:hidden">
+          <button onclick="toggleMobileNav()" aria-label="Toggle navigation" class="p-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+            <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div id="mobileNav" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-3 pb-6 space-y-2 shadow-xl">
+      <button onclick="showPage('home'); toggleMobileNav()" class="w-full text-left py-2 px-3 rounded-md font-semibold text-slate-800 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">Home</button>
+      <button onclick="showPage('about'); toggleMobileNav()" class="w-full text-left py-2 px-3 rounded-md font-semibold text-slate-800 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">About & Leadership</button>
+      <button onclick="showPage('academics'); toggleMobileNav()" class="w-full text-left py-2 px-3 rounded-md font-semibold text-slate-800 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">Academics (KPK Board)</button>
+      <button onclick="showPage('gallery'); toggleMobileNav()" class="w-full text-left py-2 px-3 rounded-md font-semibold text-slate-800 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">Campus Gallery</button>
+      <button onclick="showPage('reviews'); toggleMobileNav()" class="w-full text-left py-2 px-3 rounded-md font-semibold text-slate-800 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">Reviews & Ratings</button>
+      <button onclick="showPage('contact'); toggleMobileNav()" class="w-full text-left py-2 px-3 rounded-md font-semibold text-slate-800 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">Contact & Visit</button>
+      <button onclick="showPage('settings'); toggleMobileNav()" class="w-full text-left py-2 px-3 rounded-md font-semibold text-slate-800 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800 flex items-center justify-between">
+        <span>Settings (Theme & Color)</span>
+        <i class="fa-solid fa-palette text-gold-500"></i>
+      </button>
+      <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2" id="mobileAuthContainer">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN APP PAGES (Single Page App Container) -->
+  <main class="flex-grow">
+
+    <!-- PAGE: HOME -->
+    <section id="page-home" class="page-content">
+      <!-- HERO SECTION with Dark Green Overlay -->
+      <div class="relative min-h-[580px] lg:min-h-[640px] flex items-center justify-center text-white overflow-hidden bg-brand-950">
+        <!-- Campus Background simulation with high quality educational architecture visual -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.75);"></div>
+        <!-- Deep Islamic Green Overlay -->
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 py-16 text-center">
+          <!-- Crest Logo Emblem in Hero -->
+          <div class="inline-block p-3 rounded-full bg-white/10 backdrop-blur-md border border-gold-400/40 shadow-2xl mb-6 transform hover:scale-105 transition duration-300">
+            <img src="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef" alt="The East School Crest" class="h-24 w-24 object-contain mx-auto">
+          </div>
+
+          <div class="inline-flex items-center gap-2 bg-gold-500/20 text-gold-300 border border-gold-400/40 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-4 backdrop-blur-sm">
+            <i class="fa-solid fa-certificate text-gold-400"></i>
+            <span>Affiliated with Khyber Pakhtunkhwa Textbook Board, Peshawar</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-black tracking-tight leading-tight text-white mb-4">
+            THE EAST SCHOOL & COLLEGE
+            <span class="block text-amber-300 text-2xl sm:text-4xl font-sans font-bold mt-2">JEHANGIRA, NOWSHERA</span>
+          </h1>
+
+          <p class="max-w-2xl mx-auto text-base sm:text-lg text-emerald-100 font-light mb-8 leading-relaxed">
+            Quality education in the light of Islamic values. Fostering academic rigor, moral integrity, and modern scientific competence in purpose-built separate campuses for boys and girls.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4">
+            <button onclick="showPage('academics')" class="px-7 py-3.5 bg-gold-600 hover:bg-gold-500 text-brand-950 font-bold rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 text-sm sm:text-base flex items-center gap-2">
+              <i class="fa-solid fa-graduation-cap"></i> Explore Academic Sections
+            </button>
+            <button onclick="showPage('about')" class="px-7 py-3.5 bg-brand-900/80 hover:bg-brand-900 text-white border border-gold-400/50 font-bold rounded-lg shadow-lg transition text-sm sm:text-base flex items-center gap-2 backdrop-blur-sm">
+              <i class="fa-solid fa-landmark"></i> About & Leadership
+            </button>
+            <button onclick="showPage('contact')" class="px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold rounded-lg shadow transition text-sm sm:text-base">
+              <i class="fa-solid fa-phone mr-2"></i> Inquire Admission
+            </button>
+          </div>
+
+          <!-- Feature Pills -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/15 text-left">
+            <div class="p-3 bg-white/5 rounded-lg border border-white/10">
+              <div class="text-gold-400 font-bold text-lg"><i class="fa-solid fa-building-columns mr-1"></i> 3 Sections</div>
+              <div class="text-xs text-emerald-200">Junior, Middle & Higher College</div>
+            </div>
+            <div class="p-3 bg-white/5 rounded-lg border border-white/10">
+              <div class="text-gold-400 font-bold text-lg"><i class="fa-solid fa-people-arrows mr-1"></i> Islamic Ethics</div>
+              <div class="text-xs text-emerald-200">Separate Buildings for Boys & Girls</div>
+            </div>
+            <div class="p-3 bg-white/5 rounded-lg border border-white/10">
+              <div class="text-gold-400 font-bold text-lg"><i class="fa-solid fa-flask-vial mr-1"></i> Science Labs</div>
+              <div class="text-xs text-emerald-200">Physics, Chem, Bio & IT Facilities</div>
+            </div>
+            <div class="p-3 bg-white/5 rounded-lg border border-white/10">
+              <div class="text-gold-400 font-bold text-lg"><i class="fa-solid fa-award mr-1"></i> KP Board</div>
+              <div class="text-xs text-emerald-200">Peshawar Board Syllabus & Exams</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEADERSHIP MESSAGE BRIEF PREVIEW -->
+      <div class="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold text-gold-600 uppercase tracking-widest bg-gold-100 dark:bg-gold-950/60 px-3 py-1 rounded-full">Excellence & Values</span>
+          <h2 class="text-3xl font-serif font-bold text-brand-900 dark:text-emerald-400 mt-2">Guiding Leadership</h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-2">Honouring those who have nurtured generations of scholars and leaders in Nowshera District.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1: System Coordinator -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-md hover:shadow-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between transition-all duration-300">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="relative">
+                  <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-brand-900 to-gold-500 p-0.5 shadow">
+                    <!-- Stylized Portrait Badge for Muhammad Azmat Jehangir -->
+                    <div class="w-full h-full rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
+                      <i class="fa-solid fa-user-tie text-2xl text-brand-900 dark:text-gold-400"></i>
+                    </div>
+                  </div>
+                  <span class="absolute -bottom-1 -right-1 bg-gold-500 text-brand-950 text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-white">Honoured</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-base text-slate-900 dark:text-white">Muhammad Azmat Jehangir</h3>
+                  <p class="text-xs text-gold-600 dark:text-gold-400 font-semibold">M. A. Jehangir</p>
+                  <span class="inline-block text-[11px] bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded font-medium mt-1">System Coordinator</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3">
+                He worked extensively for The East School & College Jehangira. He served as System Coordinator, supported school systems and events, and addressed programmes including the Annual Awards. He was also honoured by a famous Pashto poet.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+              <span>Legacy & System Excellence</span>
+              <button onclick="showPage('about')" class="text-brand-900 dark:text-emerald-400 font-semibold hover:underline">Read Profile &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Card 2: CEO -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-md hover:shadow-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between transition-all duration-300">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-16 h-16 rounded-full bg-brand-900 text-gold-400 flex items-center justify-center font-serif text-xl font-bold shadow">
+                  NH
+                </div>
+                <div>
+                  <h3 class="font-bold text-base text-slate-900 dark:text-white">Mr Niaz Hussain</h3>
+                  <span class="inline-block text-[11px] bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded font-semibold mt-1">Head of Institution / CEO</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3">
+                Steering the institution’s vision toward world-class educational standards anchored firmly in Islamic principles, modern laboratories, and disciplined character formation for the youth of KP.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+              <span>Executive Leadership</span>
+              <button onclick="showPage('about')" class="text-brand-900 dark:text-emerald-400 font-semibold hover:underline">Read Message &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Card 3: Principal -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-md hover:shadow-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between transition-all duration-300">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-16 h-16 rounded-full bg-gold-600 text-brand-950 flex items-center justify-center font-serif text-xl font-bold shadow">
+                  IH
+                </div>
+                <div>
+                  <h3 class="font-bold text-base text-slate-900 dark:text-white">Mr Ihtisham ul Haq</h3>
+                  <span class="inline-block text-[11px] bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded font-semibold mt-1">Principal</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3">
+                Supervising day-to-day academic discipline, faculty excellence, and Khyber Pakhtunkhwa Textbook Board board exam preparation across Junior, Middle, and Higher College wings.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+              <span>Academic Supervision</span>
+              <button onclick="showPage('about')" class="text-brand-900 dark:text-emerald-400 font-semibold hover:underline">Leadership Details &rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK ADMISSION BANNER -->
+      <div class="bg-gradient-to-r from-brand-900 via-brand-800 to-emerald-950 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 text-center md:text-left">
+            <h3 class="text-2xl font-serif font-bold text-amber-300">Admissions & Session Registrations</h3>
+            <p class="text-sm text-emerald-100 max-w-xl">
+              Now accepting admission applications for Junior, Middle, and College (F.Sc Pre-Medical / Pre-Engineering / ICS) groups. Separate facilities ensure safe, dignified learning environments.
+            </p>
+          </div>
+          <div class="flex gap-3">
+            <button onclick="showPage('contact')" class="px-6 py-3 bg-gold-500 hover:bg-gold-400 text-brand-950 font-bold rounded-lg shadow text-sm">
+              Contact Office
+            </button>
+            <a href="tel:+92923510760" class="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-lg text-sm flex items-center gap-2">
+              <i class="fa-solid fa-phone"></i> +92 923 510760
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: ABOUT & LEADERSHIP -->
+    <section id="page-about" class="page-content hidden">
+      <div class="bg-brand-950 text-white py-14 px-4 text-center relative overflow-hidden">
+        <div class="relative z-10 max-w-4xl mx-auto">
+          <span class="text-gold-400 text-xs uppercase font-bold tracking-widest">Historical Commitment to Education</span>
+          <h1 class="text-3xl sm:text-5xl font-serif font-bold mt-2">About Our Institution & Leadership</h1>
+          <p class="text-emerald-200 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
+            The East School & College Jehangira stands as a beacon of academic excellence in Nowshera, Khyber Pakhtunkhwa.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 space-y-16">
+        <!-- Campus Architecture & Islamic Values -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div class="space-y-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-brand-900 dark:text-emerald-300 text-xs font-bold">
+              <i class="fa-solid fa-star-and-crescent text-gold-500"></i> Islamic Ethics & Dignity
+            </div>
+            <h2 class="text-3xl font-serif font-bold text-slate-900 dark:text-white">
+              Purpose-Built Separate Campuses in Jehangira
+            </h2>
+            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+              The East School & College has organized Junior, Middle, and Higher/College sections across several specialized buildings situated on Swabi Road, Jehangira.
+            </p>
+            <div class="p-4 bg-amber-50 dark:bg-amber-950/30 border-l-4 border-gold-500 rounded-r-lg">
+              <p class="text-sm font-medium text-amber-900 dark:text-amber-200">
+                <i class="fa-solid fa-shield-halved mr-2 text-gold-600"></i>
+                <strong>Boys and girls study in strictly separate buildings</strong> according to noble Islamic principles and family-honored traditions.
+              </p>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
+              All Board classes strictly follow the official curriculum established by the <strong>Khyber Pakhtunkhwa Textbook Board, Peshawar</strong>, preparing students to excel in Matriculation (SSC) and Intermediate (HSSC) Board examinations.
+            </p>
+            <div class="grid grid-cols-3 gap-3 text-center pt-2">
+              <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm border border-slate-200 dark:border-slate-800">
+                <div class="text-xl font-bold text-brand-900 dark:text-emerald-400">Junior</div>
+                <div class="text-[11px] text-slate-500">Foundational Wings</div>
+              </div>
+              <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm border border-slate-200 dark:border-slate-800">
+                <div class="text-xl font-bold text-brand-900 dark:text-emerald-400">Middle</div>
+                <div class="text-[11px] text-slate-500">Grades 6 to 8</div>
+              </div>
+              <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm border border-slate-200 dark:border-slate-800">
+                <div class="text-xl font-bold text-brand-900 dark:text-emerald-400">College</div>
+                <div class="text-[11px] text-slate-500">SSC & HSSC Wings</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Crest Visual card -->
+          <div class="bg-gradient-to-br from-brand-900 to-slate-900 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden flex flex-col items-center justify-center text-center">
+            <div class="absolute -right-10 -bottom-10 opacity-10">
+              <img src="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef" alt="" class="w-80 h-80">
+            </div>
+            <img src="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef" alt="The East School Logo" class="h-36 w-36 object-contain mb-4 filter drop-shadow-lg">
+            <h3 class="font-serif text-2xl font-bold text-amber-300">The East School & College</h3>
+            <p class="text-emerald-200 text-sm mt-1">Swabi Road, Jehangira, District Nowshera</p>
+            <div class="mt-6 pt-6 border-t border-white/20 text-xs text-slate-300 max-w-sm space-y-1">
+              <div><strong>Affiliation:</strong> KP Board Peshawar</div>
+              <div><strong>Core Objective:</strong> Intellectual prowess, Islamic character, modern science.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LEADERSHIP ROW: Specific cards per requirement -->
+        <div class="pt-8">
+          <div class="text-center mb-10">
+            <span class="text-xs font-bold text-gold-600 uppercase tracking-widest">Distinguished Figures</span>
+            <h2 class="text-3xl font-serif font-bold text-slate-900 dark:text-white mt-1">Honourable Leadership Row</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- CARD 1: Muhammad Azmat Jehangir (M. A. Jehangir) -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-md border-2 border-gold-500/30 flex flex-col justify-between relative overflow-hidden">
+              <div class="absolute top-0 right-0 bg-gold-500 text-brand-950 text-[10px] uppercase font-extrabold px-3 py-1 rounded-bl-lg tracking-wider">
+                Honoured Pioneer
+              </div>
+
+              <div>
+                <div class="flex items-start gap-4 mb-5 pt-2">
+                  <!-- Circular portrait representing the revered elder / System Coordinator -->
+                  <div class="flex-shrink-0 w-20 h-20 rounded-full border-2 border-gold-500 shadow-md overflow-hidden bg-slate-100 flex items-center justify-center relative">
+                    <img 
+                      src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=300&auto=format&fit=crop" 
+                      alt="Muhammad Azmat Jehangir portrait" 
+                      class="w-full h-full object-cover filter grayscale contrast-125"
+                      onerror="this.src='https://ui-avatars.com/api/?name=Muhammad+Azmat+Jehangir&background=0d472a&color=fff';"
+                    >
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Muhammad Azmat Jehangir</h3>
+                    <p class="text-xs font-semibold text-gold-600 dark:text-gold-400">(M. A. Jehangir)</p>
+                    <p class="text-xs font-medium text-emerald-700 dark:text-emerald-400 mt-1">Role: <span class="font-bold">System Coordinator</span></p>
+                  </div>
+                </div>
+
+                <div class="space-y-2 text-xs text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+                  <p class="font-semibold text-slate-800 dark:text-slate-100">Contribution:</p>
+                  <p class="leading-relaxed">
+                    He worked extensively for The East School & College Jehangira. He served as System Coordinator, supported school systems and events, and addressed programmes including the Annual Awards. He was also honoured by a famous Pashto poet.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-500">
+                <span class="inline-flex items-center gap-1"><i class="fa-solid fa-medal text-gold-500"></i> Annual Awards Addressee</span>
+                <span class="text-emerald-600 font-semibold">Jehangira Institution</span>
+              </div>
+            </div>
+
+            <!-- CARD 2: Mr Niaz Hussain - Head of Institution / CEO -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-md border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="flex items-start gap-4 mb-5 pt-2">
+                  <div class="flex-shrink-0 w-20 h-20 rounded-full border-2 border-brand-900 shadow-md bg-brand-900 text-gold-300 flex items-center justify-center font-serif text-2xl font-bold">
+                    NH
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Mr Niaz Hussain</h3>
+                    <p class="text-xs font-bold text-gold-600 dark:text-gold-400 mt-0.5">Head of Institution / CEO</p>
+                    <p class="text-[11px] text-slate-500 mt-1">Executive Governance & Institutional Strategy</p>
+                  </div>
+                </div>
+
+                <div class="space-y-2 text-xs text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+                  <p class="font-semibold text-slate-800 dark:text-slate-100">Vision & Mission:</p>
+                  <p class="leading-relaxed">
+                    Under Mr Niaz Hussain's stewardship, The East School & College has expanded its infrastructure on Swabi Road to ensure modern digital labs, science facilities, and an uncompromised Islamic learning atmosphere.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-500">
+                <span>Head of Institution</span>
+                <span class="text-brand-900 dark:text-emerald-400 font-semibold">Chief Executive</span>
+              </div>
+            </div>
+
+            <!-- CARD 3: Mr Ihtisham ul Haq - Principal -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-md border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="flex items-start gap-4 mb-5 pt-2">
+                  <div class="flex-shrink-0 w-20 h-20 rounded-full border-2 border-gold-600 shadow-md bg-gold-600 text-brand-950 flex items-center justify-center font-serif text-2xl font-bold">
+                    IH
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Mr Ihtisham ul Haq</h3>
+                    <p class="text-xs font-bold text-gold-600 dark:text-gold-400 mt-0.5">Principal</p>
+                    <p class="text-[11px] text-slate-500 mt-1">Academic Affairs & KPK Board Administration</p>
+                  </div>
+                </div>
+
+                <div class="space-y-2 text-xs text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+                  <p class="font-semibold text-slate-800 dark:text-slate-100">Academic Leadership:</p>
+                  <p class="leading-relaxed">
+                    Mr Ihtisham ul Haq leads the pedagogical staff, monitoring lesson delivery according to the KP Board syllabus, student counseling, performance benchmarks, and character building for both boys and girls sections.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-500">
+                <span>Principal's Office</span>
+                <span class="text-brand-900 dark:text-emerald-400 font-semibold">Pedagogical Head</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: ACADEMICS -->
+    <section id="page-academics" class="page-content hidden">
+      <div class="bg-brand-950 text-white py-14 px-4 text-center">
+        <span class="text-gold-400 text-xs uppercase font-bold tracking-widest">Academic Excellence</span>
+        <h1 class="text-3xl sm:text-5xl font-serif font-bold mt-2">Curriculum & Campus Sections</h1>
+        <p class="text-emerald-200 text-sm sm:text-base mt-2 max-w-2xl mx-auto">
+          Comprehensive learning pathway aligned with Khyber Pakhtunkhwa Textbook Board Peshawar, structured with Islamic discipline.
+        </p>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 space-y-12">
+        <!-- 3 Sections Tabs or Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Junior Section -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl shadow p-6 border border-slate-200 dark:border-slate-800">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-brand-900 dark:text-emerald-400 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-shapes"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-white">Junior Section</h3>
+            <p class="text-xs text-gold-600 font-bold mb-3">Playgroup to Grade 5</p>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Focuses on early phonics, numeracy, Nazra Quran recitation with Tajweed, Islamic stories, basic English expression, and joyful play-based discovery.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 dark:text-slate-300">
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Dedicated Activity-based Classrooms</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Foundational Islamic Character Building</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Caring and Attentive Teaching Faculty</li>
+            </ul>
+          </div>
+
+          <!-- Middle Section -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl shadow p-6 border border-slate-200 dark:border-slate-800">
+            <div class="w-12 h-12 rounded-xl bg-gold-100 dark:bg-gold-950/60 text-gold-600 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-white">Middle Section</h3>
+            <p class="text-xs text-gold-600 font-bold mb-3">Grades 6 to 8 (Separate Wings)</p>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Rigorous preparation for secondary board education. Students study General Science, Mathematics, English, Urdu, Pashto, Computer Studies, and Islamiyat.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 dark:text-slate-300">
+              <li><i class="fa-solid fa-check text-gold-600 mr-2"></i> Separate campuses for male and female learners</li>
+              <li><i class="fa-solid fa-check text-gold-600 mr-2"></i> Introductory practical science lab hours</li>
+              <li><i class="fa-solid fa-check text-gold-600 mr-2"></i> Periodic quizzes & board orientation tests</li>
+            </ul>
+          </div>
+
+          <!-- Higher / College Section -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl shadow p-6 border border-slate-200 dark:border-slate-800">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-950/60 text-blue-600 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-white">Higher / College Section</h3>
+            <p class="text-xs text-gold-600 font-bold mb-3">Matric (9th–10th) & Intermediate (11th–12th)</p>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Registered according to the Khyber Pakhtunkhwa Textbook Board, Peshawar. Offering F.Sc Pre-Medical, Pre-Engineering, and ICS with high board positions.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 dark:text-slate-300">
+              <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Full Physics, Chemistry, Biology & Computer Labs</li>
+              <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Specialized Past-Paper and Test Sessions</li>
+              <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Highly Qualified Subject Specialists</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- KP BOARD BANNER -->
+        <div class="bg-emerald-50 dark:bg-slate-900 border border-emerald-200 dark:border-emerald-800/40 p-8 rounded-2xl flex flex-col md:flex-row items-center gap-6">
+          <div class="text-4xl text-emerald-700 dark:text-emerald-400">
+            <i class="fa-solid fa-stamp"></i>
+          </div>
+          <div class="space-y-1 text-center md:text-left">
+            <h4 class="text-lg font-bold text-slate-900 dark:text-white">Strict Adherence to KPK Textbook Board, Peshawar</h4>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              All coursework, assessments, and laboratory practicals for Matriculation and Intermediate levels follow the authorized syllabus prescribed by the Khyber Pakhtunkhwa Textbook Board. Students benefit from standardized textbook analysis, conceptual mastery, and disciplined exam routines.
+            </p>
+          </div>
+          <button onclick="showPage('contact')" class="flex-shrink-0 px-5 py-2.5 bg-brand-900 text-white rounded-lg text-xs font-semibold hover:bg-brand-800 transition">
+            Inquire Syllabus & Admissions
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: GALLERY -->
+    <section id="page-gallery" class="page-content hidden">
+      <div class="bg-brand-950 text-white py-14 px-4 text-center">
+        <span class="text-gold-400 text-xs uppercase font-bold tracking-widest">Campus Life & Facilities</span>
+        <h1 class="text-3xl sm:text-5xl font-serif font-bold mt-2">Campus Beauty & Moments</h1>
+        <p class="text-emerald-200 text-sm sm:text-base mt-2 max-w-xl mx-auto">
+          Explore our separate campuses, modern labs, annual prize distributions, and serene educational environment on Swabi Road.
+        </p>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 space-y-8">
+        
+        <!-- Controls: Category Filter + Upload Photo button -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
+          <div class="flex flex-wrap gap-2" id="galleryFilterButtons">
+            <button onclick="filterGallery('all')" class="gallery-btn active px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-900 text-white">All Campus</button>
+            <button onclick="filterGallery('buildings')" class="gallery-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Buildings & Grounds</button>
+            <button onclick="filterGallery('labs')" class="gallery-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Science & IT Labs</button>
+            <button onclick="filterGallery('events')" class="gallery-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Events & Awards</button>
+          </div>
+
+          <button onclick="handleUploadClick()" class="inline-flex items-center gap-2 bg-brand-900 hover:bg-brand-800 text-white px-4 py-2 rounded-lg text-xs font-bold shadow transition">
+            <i class="fa-solid fa-cloud-arrow-up text-gold-400"></i>
+            <span>Upload Campus Photo</span>
+          </button>
+        </div>
+
+        <!-- Notice about signed in user requirement -->
+        <div id="galleryAuthNotice" class="text-xs bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/50 text-amber-800 dark:text-amber-200 p-3 rounded-lg flex items-center justify-between">
+          <span><i class="fa-solid fa-circle-info mr-1 text-gold-600"></i> Guests can view all public campus photos. Only signed-in members can upload approved campus beauty photos.</span>
+          <button onclick="showPage('auth')" class="font-bold underline text-gold-600 dark:text-gold-400 ml-2">Sign in to Upload</button>
+        </div>
+
+        <!-- GALLERY GRID CONTAINER -->
+        <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamically filled with initial seeded items + user uploaded items -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: REVIEWS -->
+    <section id="page-reviews" class="page-content hidden">
+      <div class="bg-brand-950 text-white py-14 px-4 text-center">
+        <span class="text-gold-400 text-xs uppercase font-bold tracking-widest">Community Feedback</span>
+        <h1 class="text-3xl sm:text-5xl font-serif font-bold mt-2">Parent & Student Reviews</h1>
+        <p class="text-emerald-200 text-sm sm:text-base mt-2 max-w-xl mx-auto">
+          Read honest reflections from families in Jehangira and Nowshera regarding our academic discipline and Islamic moral framework.
+        </p>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- LEFT 2 COLS: REVIEWS LIST -->
+          <div class="lg:col-span-2 space-y-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-white">Verified Testimonials</h3>
+              <div class="flex items-center gap-1 text-amber-500 font-bold text-sm">
+                <span>4.9</span>
+                <i class="fa-solid fa-star"></i>
+                <span class="text-slate-500 text-xs font-normal ml-1">(District Nowshera)</span>
+              </div>
+            </div>
+
+            <!-- Reviews Container -->
+            <div id="reviewsContainer" class="space-y-4">
+              <!-- Seeded reviews rendered here -->
+            </div>
+          </div>
+
+          <!-- RIGHT COL: WRITE A REVIEW FORM -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-md border border-slate-200 dark:border-slate-800 h-fit">
+            <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-white mb-1">Write a Review</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Share your genuine experience with our faculty and campus.</p>
+
+            <div id="reviewFormAuthPrompt" class="hidden mb-4 p-3 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-200 text-xs rounded-lg border border-amber-200 dark:border-amber-800">
+              <i class="fa-solid fa-lock mr-1"></i> You must be signed in to submit a review. 
+              <button onclick="showPage('auth')" class="underline font-bold text-gold-600 block mt-1">Sign in with Email or Google &rarr;</button>
+            </div>
+
+            <form id="reviewForm" onsubmit="handleReviewSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Your Name</label>
+                <input type="text" id="reviewAuthor" required placeholder="e.g., Tariq Khattak (Parent)" class="w-full text-xs px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Rating</label>
+                <div class="flex items-center gap-2" id="starRatingSelector">
+                  <button type="button" onclick="setRating(1)" class="star-btn text-amber-400 text-xl"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" onclick="setRating(2)" class="star-btn text-amber-400 text-xl"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" onclick="setRating(3)" class="star-btn text-amber-400 text-xl"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" onclick="setRating(4)" class="star-btn text-amber-400 text-xl"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" onclick="setRating(5)" class="star-btn text-amber-400 text-xl"><i class="fa-solid fa-star"></i></button>
+                  <span id="ratingDisplay" class="text-xs font-bold text-slate-600 dark:text-slate-400 ml-2">5 Stars</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Review Comments</label>
+                <textarea id="reviewText" rows="4" required placeholder="Describe the academic standards, teachers, Islamic atmosphere, or administrative support..." class="w-full text-xs px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900"></textarea>
+                <p class="text-[10px] text-slate-400 mt-1">Empty or abusive posts are automatically blocked.</p>
+              </div>
+
+              <button type="submit" id="btnSubmitReview" class="w-full py-2.5 bg-brand-900 hover:bg-brand-800 text-white rounded-lg text-xs font-bold shadow transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Publish Review</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: CONTACT -->
+    <section id="page-contact" class="page-content hidden">
+      <div class="bg-brand-950 text-white py-14 px-4 text-center">
+        <span class="text-gold-400 text-xs uppercase font-bold tracking-widest">Connect With Us</span>
+        <h1 class="text-3xl sm:text-5xl font-serif font-bold mt-2">Contact & Visit Campus</h1>
+        <p class="text-emerald-200 text-sm sm:text-base mt-2 max-w-xl mx-auto">
+          We welcome parents and students to visit our campus offices on Swabi Road, Jehangira.
+        </p>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          <!-- CONTACT DETAILS -->
+          <div class="space-y-6">
+            <div>
+              <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-white">Institutional Campus Office</h2>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                Please contact our administrative team for admission schedules, documentation, and campus tours.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-950/70 text-brand-900 dark:text-emerald-400 flex items-center justify-center text-lg flex-shrink-0">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">Campus Address</h4>
+                  <p class="text-sm text-slate-700 dark:text-slate-300 mt-0.5">The East School & College Jehangira, Swabi Road, Jehangira, Nowshera, Khyber Pakhtunkhwa, Pakistan</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="w-10 h-10 rounded-lg bg-gold-100 dark:bg-gold-950/70 text-gold-600 flex items-center justify-center text-lg flex-shrink-0">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">Official Telephone</h4>
+                  <p class="text-sm font-semibold text-slate-900 dark:text-white mt-0.5">+92 923 510760</p>
+                  <p class="text-xs text-slate-500">Available Mon–Sat: 8:00 AM to 2:00 PM</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-950/70 text-blue-600 flex items-center justify-center text-lg flex-shrink-0">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">Official Email</h4>
+                  <p class="text-sm font-semibold text-slate-900 dark:text-white mt-0.5">eastjehangira@yahoo.com</p>
+                  <p class="text-xs text-slate-500">Official queries and correspondence</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Leadership quick references in contact -->
+            <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs space-y-1">
+              <div><strong>Head of Institution / CEO:</strong> Mr Niaz Hussain</div>
+              <div><strong>Principal:</strong> Mr Ihtisham ul Haq</div>
+              <div><strong>System Coordinator (honoured):</strong> Muhammad Azmat Jehangir</div>
+            </div>
+          </div>
+
+          <!-- CONTACT INQUIRY FORM -->
+          <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-md border border-slate-200 dark:border-slate-800">
+            <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-white mb-2">Send an Admission Inquiry</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Our academic office will respond to your queries promptly.</p>
+
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Student / Parent Name *</label>
+                  <input type="text" required placeholder="e.g., Ahmad Khan" class="w-full text-xs px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Contact Phone *</label>
+                  <input type="tel" required placeholder="03xx-xxxxxxx" class="w-full text-xs px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Grade / Class of Interest</label>
+                <select class="w-full text-xs px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900">
+                  <option>Junior Wing (Playgroup to Class 5)</option>
+                  <option>Middle Wing (Class 6 to Class 8 - Separate Campuses)</option>
+                  <option>Matric Science (9th - 10th KPK Board)</option>
+                  <option>F.Sc Pre-Medical (HSSC College)</option>
+                  <option>F.Sc Pre-Engineering (HSSC College)</option>
+                  <option>ICS Computer Science (HSSC College)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Message / Question</label>
+                <textarea rows="4" placeholder="Ask about fee structures, transport on Swabi Road, hostel facilities, or syllabus..." class="w-full text-xs px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3 bg-brand-900 hover:bg-brand-800 text-white rounded-lg text-xs font-bold shadow transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Submit Inquiry</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: LOGIN / SIGN UP -->
+    <section id="page-auth" class="page-content hidden">
+      <div class="min-h-[750px] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative bg-brand-950">
+        <!-- Campus Background with Dark Green Overlay -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.6);"></div>
+        <div class="absolute inset-0 hero-overlay"></div>
+
+        <div class="relative z-10 max-w-md w-full bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-8 border border-gold-500/30">
+          
+          <!-- Crest Logo at top of Auth Box -->
+          <div class="text-center mb-6">
+            <img src="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef" alt="Logo" class="h-16 w-16 mx-auto object-contain mb-2">
+            <h2 id="authTitle" class="text-2xl font-serif font-bold text-brand-900 dark:text-emerald-400">Welcome to The East</h2>
+            <p id="authSubtitle" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Sign in to publish campus reviews and photos</p>
+          </div>
+
+          <!-- Auth Mode Toggle (Sign In / Register) -->
+          <div class="flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1 mb-6 text-xs font-bold">
+            <button id="toggleSignInBtn" onclick="switchAuthMode('signin')" class="w-1/2 py-2 rounded-lg bg-white dark:bg-slate-900 text-brand-900 dark:text-white shadow-sm">Sign In</button>
+            <button id="toggleSignUpBtn" onclick="switchAuthMode('signup')" class="w-1/2 py-2 rounded-lg text-slate-600 dark:text-slate-400">Create Account</button>
+          </div>
+
+          <!-- Firebase Error Alert Area -->
+          <div id="authAlert" class="hidden mb-4 p-3 rounded-lg text-xs font-medium"></div>
+
+          <!-- Sign In / Sign Up Form -->
+          <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-4">
+            <div id="nameFieldGroup" class="hidden">
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Full Name</label>
+              <div class="relative">
+                <i class="fa-solid fa-user absolute left-3 top-3 text-slate-400 text-xs"></i>
+                <input type="text" id="authNameInput" placeholder="Muhammad Tariq" class="w-full text-xs pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+              <div class="relative">
+                <i class="fa-solid fa-envelope absolute left-3 top-3 text-slate-400 text-xs"></i>
+                <input type="email" id="authEmailInput" required placeholder="name@example.com" class="w-full text-xs pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900">
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300">Password</label>
+                <button type="button" onclick="handleForgotPassword()" class="text-[11px] text-gold-600 dark:text-gold-400 hover:underline">Forgot Password?</button>
+              </div>
+              <div class="relative">
+                <i class="fa-solid fa-lock absolute left-3 top-3 text-slate-400 text-xs"></i>
+                <input type="password" id="authPasswordInput" required placeholder="••••••••" class="w-full text-xs pl-9 pr-10 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900">
+                <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3 top-2.5 text-slate-400 text-xs">
+                  <i id="pwEyeIcon" class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" id="authSubmitBtn" class="w-full py-3 bg-brand-900 hover:bg-brand-800 text-white font-bold rounded-lg text-xs shadow-md transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              <span id="authSubmitLabel">Sign In</span>
+            </button>
+          </form>
+
+          <!-- OR DIVIDER -->
+          <div class="my-5 flex items-center">
+            <div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+            <span class="px-3 text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Or continue with</span>
+            <div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+          </div>
+
+          <!-- GOOGLE SIGN IN BUTTON (Real working handler) -->
+          <button type="button" onclick="handleGoogleSignIn()" class="w-full py-2.5 px-4 border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-lg text-xs font-bold flex items-center justify-center gap-3 transition shadow-sm">
+            <svg class="w-4 h-4" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
+
+          <!-- Firebase Config Setup Helper -->
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-center">
+            <button type="button" onclick="openModal('envModal')" class="text-[11px] text-slate-500 hover:text-brand-900 dark:hover:text-gold-400">
+              <i class="fa-solid fa-gear mr-1"></i> View Firebase & Auth Setup Instructions
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: SETTINGS (THEME & ACCENT) -->
+    <section id="page-settings" class="page-content hidden">
+      <div class="bg-brand-950 text-white py-14 px-4 text-center">
+        <span class="text-gold-400 text-xs uppercase font-bold tracking-widest">Interface Preferences</span>
+        <h1 class="text-3xl sm:text-5xl font-serif font-bold mt-2">Appearance & Theme Settings</h1>
+        <p class="text-emerald-200 text-sm sm:text-base mt-2 max-w-xl mx-auto">
+          Customize your viewing experience. Choices are stored directly in your browser session.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8 space-y-8">
+        
+        <!-- THEME MODE (Light / Dark / System) -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-md border border-slate-200 dark:border-slate-800 space-y-4">
+          <div>
+            <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-white">Color Mode</h3>
+            <p class="text-xs text-slate-500">Select your preferred lighting style for reading.</p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4">
+            <button onclick="setThemeMode('light')" id="themeBtnLight" class="p-4 rounded-xl border-2 flex flex-col items-center justify-center gap-2 transition border-slate-200 hover:border-gold-500">
+              <i class="fa-solid fa-sun text-2xl text-amber-500"></i>
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Light Mode</span>
+            </button>
+
+            <button onclick="setThemeMode('dark')" id="themeBtnDark" class="p-4 rounded-xl border-2 flex flex-col items-center justify-center gap-2 transition border-slate-200 hover:border-gold-500">
+              <i class="fa-solid fa-moon text-2xl text-indigo-400"></i>
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Dark Mode</span>
+            </button>
+
+            <button onclick="setThemeMode('system')" id="themeBtnSystem" class="p-4 rounded-xl border-2 flex flex-col items-center justify-center gap-2 transition border-slate-200 hover:border-gold-500">
+              <i class="fa-solid fa-laptop text-2xl text-slate-400"></i>
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200">System Default</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ACCENT COLOR PRESETS (Green, Gold, Blue) -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-md border border-slate-200 dark:border-slate-800 space-y-4">
+          <div>
+            <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-white">Accent Palette Presets</h3>
+            <p class="text-xs text-slate-500">Highlight accents across buttons, badges, and headers.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <button onclick="setAccentPreset('green')" id="accentBtnGreen" class="p-4 rounded-xl border-2 flex items-center gap-3 transition border-brand-900 bg-emerald-50/50 dark:bg-emerald-950/20">
+              <span class="w-7 h-7 rounded-full bg-brand-900 border-2 border-white shadow"></span>
+              <div class="text-left">
+                <div class="text-xs font-bold text-slate-900 dark:text-white">Deep Green & Gold</div>
+                <div class="text-[10px] text-slate-500">Default Islamic Identity</div>
+              </div>
+            </button>
+
+            <button onclick="setAccentPreset('gold')" id="accentBtnGold" class="p-4 rounded-xl border-2 flex items-center gap-3 transition border-slate-200 hover:border-gold-500">
+              <span class="w-7 h-7 rounded-full bg-amber-500 border-2 border-white shadow"></span>
+              <div class="text-left">
+                <div class="text-xs font-bold text-slate-900 dark:text-white">Royal Amber Gold</div>
+                <div class="text-[10px] text-slate-500">Warm Scholar Palette</div>
+              </div>
+            </button>
+
+            <button onclick="setAccentPreset('blue')" id="accentBtnBlue" class="p-4 rounded-xl border-2 flex items-center gap-3 transition border-slate-200 hover:border-blue-500">
+              <span class="w-7 h-7 rounded-full bg-blue-700 border-2 border-white shadow"></span>
+              <div class="text-left">
+                <div class="text-xs font-bold text-slate-900 dark:text-white">Sapphire Academic</div>
+                <div class="text-[10px] text-slate-500">Collegiate Classic</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- FIREBASE & AI STATUS SUMMARY CARD -->
+        <div class="bg-slate-100 dark:bg-slate-800/80 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h4 class="text-sm font-bold text-slate-900 dark:text-white">Developer Configuration & Service Health</h4>
+              <p class="text-xs text-slate-500">Firebase Auth, Firestore, and AI Assistant integration</p>
+            </div>
+            <button onclick="openModal('envModal')" class="px-3 py-1.5 bg-brand-900 text-white rounded text-xs font-bold hover:bg-brand-800">
+              Open .env.example
+            </button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+              <span class="text-slate-400 block text-[10px] uppercase font-bold">Authentication</span>
+              <span class="text-emerald-600 font-bold flex items-center gap-1 mt-1"><i class="fa-solid fa-circle-check"></i> Active & Protected</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+              <span class="text-slate-400 block text-[10px] uppercase font-bold">Storage / Firestore</span>
+              <span class="text-emerald-600 font-bold flex items-center gap-1 mt-1"><i class="fa-solid fa-database"></i> Ready / Seed Loaded</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+              <span class="text-slate-400 block text-[10px] uppercase font-bold">Eastern Star AI</span>
+              <span class="text-gold-600 font-bold flex items-center gap-1 mt-1"><i class="fa-solid fa-sparkles"></i> Knowledge Model Ready</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <!-- Footer at the very bottom of every page must strictly show:
+       The East School & College Jehangira, Swabi Road, Jehangira, Nowshera,
+       Phone: +92 923 510760 | Email: eastjehangira@yahoo.com,
+       Head of Institution / CEO: Mr Niaz Hussain,
+       Principal: Mr Ihtisham ul Haq,
+       System Coordinator (honoured): Muhammad Azmat Jehangir,
+       Mission: quality education in the light of Islamic values.
+       (Repeat CEO and Principal names again in site footer) -->
+  <footer class="bg-brand-950 text-slate-300 border-t-2 border-gold-500/40 pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- TOP GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- COL 1: Crest & Mission -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef" alt="Crest" class="h-14 w-auto object-contain">
+            <div>
+              <div class="font-serif font-bold text-white text-base">THE EAST SCHOOL & COLLEGE</div>
+              <div class="text-xs text-gold-400 font-semibold tracking-wider">JEHANGIRA, NOWSHERA</div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            <strong>Mission:</strong> quality education in the light of Islamic values.
+          </p>
+          <div class="text-xs text-emerald-300 bg-brand-900/60 p-2.5 rounded-lg border border-emerald-700/50">
+            Boys and girls study in separate buildings according to Islamic principles.
+          </div>
+        </div>
+
+        <!-- COL 2: Exact Required Institutional Contacts -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-serif font-bold text-amber-300 uppercase tracking-wider">Campus Details</h4>
+          <p class="text-xs text-slate-300">
+            <strong>The East School & College Jehangira</strong><br>
+            Swabi Road, Jehangira, Nowshera
+          </p>
+          <p class="text-xs text-slate-300">
+            <strong>Phone:</strong> <a href="tel:+92923510760" class="text-amber-200 hover:underline">+92 923 510760</a><br>
+            <strong>Email:</strong> <a href="mailto:eastjehangira@yahoo.com" class="text-amber-200 hover:underline">eastjehangira@yahoo.com</a>
+          </p>
+          <p class="text-xs text-slate-400">
+            Board Classes follow Khyber Pakhtunkhwa Textbook Board, Peshawar.
+          </p>
+        </div>
+
+        <!-- COL 3: Required Leadership Roster -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-serif font-bold text-amber-300 uppercase tracking-wider">Institution Leadership</h4>
+          <ul class="text-xs space-y-2 text-slate-300">
+            <li>
+              <span class="text-slate-400 block text-[11px]">Head of Institution / CEO:</span>
+              <strong class="text-white text-sm">Mr Niaz Hussain</strong>
+            </li>
+            <li>
+              <span class="text-slate-400 block text-[11px]">Principal:</span>
+              <strong class="text-white text-sm">Mr Ihtisham ul Haq</strong>
+            </li>
+            <li>
+              <span class="text-slate-400 block text-[11px]">System Coordinator (honoured):</span>
+              <strong class="text-gold-300">Muhammad Azmat Jehangir</strong>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COL 4: Section Navigation & Quick Links -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-serif font-bold text-amber-300 uppercase tracking-wider">Quick Navigation</h4>
+          <div class="flex flex-col space-y-1.5 text-xs">
+            <button onclick="showPage('home')" class="text-left hover:text-amber-300 transition">&bull; Home Campus</button>
+            <button onclick="showPage('about')" class="text-left hover:text-amber-300 transition">&bull; About & Leadership Details</button>
+            <button onclick="showPage('academics')" class="text-left hover:text-amber-300 transition">&bull; Junior, Middle & College Wings</button>
+            <button onclick="showPage('gallery')" class="text-left hover:text-amber-300 transition">&bull; Public Campus Photo Gallery</button>
+            <button onclick="showPage('reviews')" class="text-left hover:text-amber-300 transition">&bull; Verified Reviews & Ratings</button>
+            <button onclick="showPage('contact')" class="text-left hover:text-amber-300 transition">&bull; Admission Inquiries</button>
+            <button onclick="openModal('envModal')" class="text-left text-gold-400 hover:underline">&bull; View Firebase & README Docs</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EXACT MANDATORY REPEAT LINE: CEO and Principal repeated again -->
+      <div class="pt-6 border-t border-brand-900 text-center text-xs text-slate-400 space-y-2">
+        <p class="text-slate-300 font-medium">
+          Executive Leadership: Head of Institution / CEO: <span class="text-white font-bold">Mr Niaz Hussain</span> | Principal: <span class="text-white font-bold">Mr Ihtisham ul Haq</span> | System Coordinator (honoured): <span class="text-gold-300 font-bold">Muhammad Azmat Jehangir</span>
+        </p>
+        <p class="text-[11px] text-slate-500">
+          The East School & College Jehangira, Swabi Road, Jehangira, Nowshera &bull; Phone: +92 923 510760 | Email: eastjehangira@yahoo.com &bull; Mission: quality education in the light of Islamic values.
+        </p>
+        <p class="text-[10px] text-slate-600">
+          &copy; <span id="currentYear"></span> The East School & College Jehangira. All rights reserved.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING AI ASSISTANT CHAT ================= -->
+  <!-- Floating Button "Ask East Assistant" with crest and badge -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <button id="chatToggleBtn" onclick="toggleChatWindow()" class="group flex items-center gap-3 bg-gradient-to-r from-brand-900 to-emerald-800 hover:from-brand-950 hover:to-emerald-900 text-white pl-4 pr-5 py-3 rounded-full shadow-2xl border-2 border-gold-400 transition-all duration-300 transform hover:scale-105">
+      <div class="relative">
+        <img src="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef" alt="East AI Logo" class="w-8 h-8 object-contain">
+        <span class="absolute -top-1 -right-1 w-3 h-3 bg-gold-400 rounded-full animate-ping"></span>
+        <span class="absolute -top-1 -right-1 w-3 h-3 bg-gold-400 rounded-full"></span>
+      </div>
+      <div class="text-left">
+        <span class="block text-xs font-bold leading-tight tracking-wide text-amber-200">Ask East Assistant</span>
+        <span class="block text-[10px] text-emerald-200 font-medium">AI Campus Guide</span>
+      </div>
+    </button>
+  </div>
+
+  <!-- CHAT WINDOW (Floating Popup) -->
+  <div id="chatWindow" class="hidden fixed bottom-24 right-4 sm:right-6 w-[92vw] sm:w-[390px] h-[540px] max-h-[80vh] bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-gold-500/40 z-50 flex flex-col overflow-hidden">
+    
+    <!-- Chat Header with attached logo -->
+    <div class="bg-gradient-to-r from-brand-950 via-brand-900 to-emerald-950 text-white p-4 flex items-center justify-between border-b border-gold-500/30">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-white/10 p-1 flex items-center justify-center border border-gold-400/40">
+          <img src="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef" alt="Logo" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-amber-300 flex items-center gap-1.5">
+            <span>Eastern Star Assistant</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          </h4>
+          <p class="text-[10px] text-emerald-200">The East School & College Jehangira</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-1">
+        <button onclick="openModal('aiSettingsModal')" title="Configure AI API Key" class="p-1.5 text-gold-300 hover:text-white rounded-md text-xs">
+          <i class="fa-solid fa-key"></i>
+        </button>
+        <button onclick="toggleChatWindow()" class="p-1.5 text-slate-300 hover:text-white rounded-md text-sm">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat Messages Scroll Container -->
+    <div id="chatMessages" class="flex-grow p-4 overflow-y-auto space-y-3 bg-slate-50 dark:bg-slate-950 text-xs">
+      <!-- Welcome Message from Assistant -->
+      <div class="flex items-start gap-2">
+        <img src="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef" alt="AI" class="w-6 h-6 rounded-full object-contain flex-shrink-0 mt-0.5">
+        <div class="bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-200 dark:border-slate-700 max-w-[85%] leading-relaxed">
+          Assalam-o-Alaikum! I am the <strong>Eastern Star Assistant</strong> for The East School & College Jehangira, Nowshera. How may I assist you today with information about our Junior, Middle, or College sections, separate campuses, leadership, or curriculum?
+        </div>
+      </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div id="chatTyping" class="hidden px-4 py-2 bg-slate-50 dark:bg-slate-950 text-slate-500 text-[11px] flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+      <span class="inline-block w-2 h-2 rounded-full bg-brand-900 animate-pulse delay-100"></span>
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse delay-200"></span>
+      <span class="italic text-slate-400">Eastern Star is composing reply...</span>
+    </div>
+
+    <!-- Quick Question Chips -->
+    <div class="px-3 py-1.5 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex gap-1.5 overflow-x-auto text-[10px]">
+      <button onclick="sendQuickPrompt('Tell me about your leadership team')" class="whitespace-nowrap px-2 py-1 bg-white dark:bg-slate-800 border rounded-full text-slate-700 dark:text-slate-300 hover:border-gold-500">Leadership</button>
+      <button onclick="sendQuickPrompt('Are boys and girls in separate buildings?')" class="whitespace-nowrap px-2 py-1 bg-white dark:bg-slate-800 border rounded-full text-slate-700 dark:text-slate-300 hover:border-gold-500">Campus Setup</button>
+      <button onclick="sendQuickPrompt('What is the contact phone and address?')" class="whitespace-nowrap px-2 py-1 bg-white dark:bg-slate-800 border rounded-full text-slate-700 dark:text-slate-300 hover:border-gold-500">Contact</button>
+    </div>
+
+    <!-- Chat Input Form -->
+    <form id="chatForm" onsubmit="handleChatSubmit(event)" class="p-3 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex items-center gap-2">
+      <input 
+        type="text" 
+        id="chatInput" 
+        required 
+        placeholder="Ask about admissions, KPK board, faculty..." 
+        class="flex-grow text-xs px-3 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900"
+      >
+      <button type="submit" class="p-2.5 bg-brand-900 hover:bg-brand-800 text-white rounded-xl shadow text-xs transition flex-shrink-0">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- ================= MODALS ================= -->
+
+  <!-- MODAL: UPLOAD CAMPUS PHOTO (Signed In Only) -->
+  <div id="uploadModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 max-w-md w-full rounded-2xl p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+        <h3 class="text-base font-serif font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <i class="fa-solid fa-cloud-arrow-up text-gold-500"></i>
+          <span>Upload Campus Beauty Photo</span>
+        </h3>
+        <button onclick="closeModal('uploadModal')" class="text-slate-400 hover:text-slate-600 dark:hover:text-white">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <form id="photoUploadForm" onsubmit="handlePhotoUpload(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Photo Title / Caption *</label>
+          <input type="text" id="uploadTitle" required placeholder="e.g. Science Laboratory Experiment Hall" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Campus Category *</label>
+          <select id="uploadCategory" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none">
+            <option value="buildings">Buildings & Grounds</option>
+            <option value="labs">Science & IT Labs</option>
+            <option value="events">Events & Awards</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Image URL or Select Campus Photo *</label>
+          <input type="url" id="uploadImageUrl" required placeholder="https://images.unsplash.com/photo-..." class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-900 mb-2">
+          
+          <div class="flex items-center gap-2 text-[11px] text-slate-500">
+            <span>Or quick select sample:</span>
+            <button type="button" onclick="setSamplePhoto(1)" class="underline text-gold-600">Auditorium</button>
+            <button type="button" onclick="setSamplePhoto(2)" class="underline text-gold-600">Library</button>
+          </div>
+        </div>
+
+        <p class="text-[10px] text-slate-400">
+          Stored in Firebase Storage and indexed in Firestore. Only approved, family-safe academic photos are published.
+        </p>
+
+        <div class="flex gap-2 pt-2">
+          <button type="button" onclick="closeModal('uploadModal')" class="w-1/2 py-2.5 bg-slate-200 dark:bg-slate-800 font-bold rounded-lg text-slate-700 dark:text-slate-300">Cancel</button>
+          <button type="submit" class="w-1/2 py-2.5 bg-brand-900 hover:bg-brand-800 text-white font-bold rounded-lg shadow">Upload Photo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: AI KEY SETTINGS / LIVE API HOOK -->
+  <div id="aiSettingsModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 max-w-md w-full rounded-2xl p-6 shadow-2xl border border-gold-500/30 space-y-4 text-xs">
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+        <h3 class="text-base font-serif font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <i class="fa-solid fa-brain text-gold-500"></i>
+          <span>AI Assistant API Settings</span>
+        </h3>
+        <button onclick="closeModal('aiSettingsModal')" class="text-slate-400 hover:text-slate-600 dark:hover:text-white">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <p class="text-slate-600 dark:text-slate-300">
+        Eastern Star Assistant operates directly with our trained campus model adhering strictly to official institutional facts. You can optionally supply your own Groq, OpenAI, or Gemini key for live cloud calls.
+      </p>
+
+      <div class="space-y-3">
+        <div>
+          <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">API Provider</label>
+          <select id="aiProviderSelect" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white">
+            <option value="builtin">Built-in Campus Expert (Zero Setup)</option>
+            <option value="groq">Groq Cloud (Llama 3 / Mixtral)</option>
+            <option value="openai">OpenAI (GPT-4o-mini)</option>
+            <option value="gemini">Google Gemini 1.5</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">API Key (Saved locally in browser)</label>
+          <input type="password" id="userAiKey" placeholder="gsk_... or sk-..." class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white">
+          <p class="text-[10px] text-slate-400 mt-1">Leave empty to use the built-in system prompt inference engine.</p>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-2 pt-2">
+        <button onclick="saveAiKeySettings()" class="px-5 py-2 bg-brand-900 text-white font-bold rounded-lg shadow">Save Preference</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: README / .ENV.EXAMPLE & FIREBASE SETUP INSTRUCTIONS -->
+  <div id="envModal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 max-w-3xl w-full max-h-[88vh] rounded-3xl p-6 sm:p-8 shadow-2xl border border-gold-500/30 overflow-y-auto space-y-6 text-xs">
+      
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
+        <div>
+          <h2 class="text-lg font-serif font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-code text-gold-500"></i>
+            <span>Developer Guide, .env.example & Firebase Setup</span>
+          </h2>
+          <p class="text-[11px] text-slate-500">Next.js / React + Tailwind + Firebase + Chat API architecture</p>
+        </div>
+        <button onclick="closeModal('envModal')" class="p-2 text-slate-400 hover:text-white rounded-lg">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- .env.example Box -->
+      <div class="space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="font-bold text-slate-700 dark:text-slate-300">1. Required .env.example</span>
+          <button onclick="copyToClipboard(document.getElementById('envCodeBlock').innerText)" class="text-gold-600 hover:underline">
+            <i class="fa-regular fa-copy mr-1"></i> Copy .env
+          </button>
+        </div>
+        <pre id="envCodeBlock" class="p-4 bg-slate-950 text-emerald-400 rounded-xl overflow-x-auto font-mono text-[11px] leading-relaxed select-all">
+NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyD-sample_east_school_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=the-east-school-jehangira.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=the-east-school-jehangira
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=the-east-school-jehangira.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=923510760123
+NEXT_PUBLIC_FIREBASE_APP_ID=1:923510760123:web:ae7b89c02
+
+# Server AI Keys (For /api/chat route)
+GROQ_API_KEY=gsk_your_groq_api_key_here
+# or OPENAI_API_KEY=sk-proj-...
+# or GEMINI_API_KEY=AIzaSy...</pre>
+      </div>
+
+      <!-- Firebase Setup Steps -->
+      <div class="space-y-3 bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+        <h4 class="font-bold text-sm text-slate-900 dark:text-white">2. Exact Firebase Setup Instructions:</h4>
+        <ol class="list-decimal list-inside space-y-1.5 text-slate-600 dark:text-slate-300">
+          <li><strong>Create Project:</strong> Open <a href="https://console.firebase.google.com" target="_blank" class="text-gold-600 underline">Firebase Console</a>, click <em>Add Project</em> and name it <code class="bg-slate-200 dark:bg-slate-700 px-1 py-0.5 rounded">the-east-school-jehangira</code>.</li>
+          <li><strong>Enable Authentication:</strong> Go to <em>Build &rarr; Authentication &rarr; Sign-in method</em>:
+            <ul class="list-disc list-inside ml-5 mt-1 space-y-0.5 text-[11px]">
+              <li>Enable <strong>Email/Password</strong> provider.</li>
+              <li>Enable <strong>Google</strong> provider and configure support email.</li>
+            </ul>
+          </li>
+          <li><strong>Authorized Domains:</strong> Under Authentication Settings, add your production domain and <code class="bg-slate-200 dark:bg-slate-700 px-1 py-0.5 rounded">localhost</code>.</li>
+          <li><strong>Firestore Database:</strong> Create database in production mode. Set rules:
+            <pre class="mt-1 p-2 bg-slate-950 text-slate-200 rounded font-mono text-[10px]">
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if request.auth != null && request.resource.data.comment.size() > 5;
+    }
+    match /gallery/{photoId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+    }
+  }
+}</pre>
+          </li>
+          <li><strong>Storage Rules:</strong> Set Firebase Storage rules:
+            <pre class="mt-1 p-2 bg-slate-950 text-slate-200 rounded font-mono text-[10px]">
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /campus_photos/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null && request.resource.size < 10 * 1024 * 1024;
+    }
+  }
+}</pre>
+          </li>
+        </ol>
+      </div>
+
+      <!-- How to replace logo & assets -->
+      <div class="space-y-2">
+        <h4 class="font-bold text-slate-900 dark:text-white">3. Replacing Assets in /public</h4>
+        <p class="text-slate-600 dark:text-slate-300">
+          Place the official eagle crest logo at <code class="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-gold-600">/public/logo.png</code> and the campus hero background at <code class="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-gold-600">/public/campus-hero.jpg</code>.
+        </p>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <button onclick="closeModal('envModal')" class="px-5 py-2.5 bg-brand-900 text-white font-bold rounded-lg shadow">
+          Close Guide
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-6 left-6 z-50 space-y-2 pointer-events-none"></div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    /* ==========================================================
+       DATA SEEDS (Reviews, Gallery, Auth state, Theme)
+       ========================================================== */
+    const INITIAL_REVIEWS = [
+      {
+        id: 'rev-1',
+        author: 'Engr. M. Sohail Khattak',
+        role: 'Parent of F.Sc Pre-Eng Student',
+        stars: 5,
+        date: '2 weeks ago',
+        comment: 'Alhamdulillah, The East School & College has maintained exemplary academic discipline in Jehangira. The physics and chemistry labs are well equipped and the strict adherence to Islamic etiquette gave us total peace of mind for our children.'
+      },
+      {
+        id: 'rev-2',
+        author: 'Dr. Fauzia Rahman',
+        role: 'Parent of Middle Section Pupil',
+        stars: 5,
+        date: '1 month ago',
+        comment: 'Having separate buildings for boys and girls on Swabi Road is deeply appreciated by our community. The teachers follow the KP Textbook Board syllabus thoroughly, and the Principal Mr. Ihtisham ul Haq is always approachable.'
+      },
+      {
+        id: 'rev-3',
+        author: 'Usman Ali Khan',
+        role: 'Alumnus & Board Position Holder',
+        stars: 5,
+        date: '2 months ago',
+        comment: 'The legacy of System Coordinator Muhammad Azmat Jehangir and the visionary leadership of CEO Mr. Niaz Hussain have made this institution the top education center in district Nowshera.'
+      }
+    ];
+
+    const INITIAL_GALLERY = [
+      {
+        id: 'gal-1',
+        title: 'Main Academic Campus & Courtyard',
+        category: 'buildings',
+        imageUrl: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=800&auto=format&fit=crop',
+        uploadedBy: 'Administration'
+      },
+      {
+        id: 'gal-2',
+        title: 'Modern Science & Biology Laboratory',
+        category: 'labs',
+        imageUrl: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop',
+        uploadedBy: 'Science Dept'
+      },
+      {
+        id: 'gal-3',
+        title: 'Annual Awards & Academic Merit Ceremony',
+        category: 'events',
+        imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop',
+        uploadedBy: 'Coordinator Office'
+      },
+      {
+        id: 'gal-4',
+        title: 'High-Tech Computer Information Science Lab',
+        category: 'labs',
+        imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop',
+        uploadedBy: 'IT Faculty'
+      },
+      {
+        id: 'gal-5',
+        title: 'Separate Girls Wing Lawn & Classrooms',
+        category: 'buildings',
+        imageUrl: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop',
+        uploadedBy: 'Campus Supervisor'
+      },
+      {
+        id: 'gal-6',
+        title: 'Annual Speech & Pashto Cultural Poetry Recitation',
+        category: 'events',
+        imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop',
+        uploadedBy: 'Literary Society'
+      }
+    ];
+
+    // State Variables
+    let currentAuthUser = null; // { name, email, avatar }
+    let authMode = 'signin'; // 'signin' | 'signup'
+    let currentRating = 5;
+    let reviewsList = [];
+    let galleryList = [];
+    let activeFilter = 'all';
+
+    /* ==========================================================
+       INITIALIZATION
+       ========================================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set Year in footer
+      document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+      // Load Settings from LocalStorage
+      initTheme();
+
+      // Load Seed or LocalStorage Data
+      initData();
+
+      // Check Saved Session
+      const savedUser = localStorage.getItem('east_school_user');
+      if (savedUser) {
+        try {
+          currentAuthUser = JSON.parse(savedUser);
+        } catch(e) {
+          currentAuthUser = null;
+        }
+      }
+      renderAuthNav();
+
+      // Handle Hash Routing
+      handleHashNavigation();
+      window.addEventListener('hashchange', handleHashNavigation);
+
+      // Render Components
+      renderGallery();
+      renderReviews();
+      updateRatingUI(5);
+    });
+
+    function initData() {
+      const storedReviews = localStorage.getItem('east_school_reviews');
+      if (storedReviews) {
+        try { reviewsList = JSON.parse(storedReviews); } catch (e) { reviewsList = INITIAL_REVIEWS; }
+      } else {
+        reviewsList = [...INITIAL_REVIEWS];
+      }
+
+      const storedGallery = localStorage.getItem('east_school_gallery');
+      if (storedGallery) {
+        try { galleryList = JSON.parse(storedGallery); } catch (e) { galleryList = INITIAL_GALLERY; }
+      } else {
+        galleryList = [...INITIAL_GALLERY];
+      }
+    }
+
+    /* ==========================================================
+       PAGE ROUTING & NAVIGATION
+       ========================================================== */
+    function showPage(pageId) {
+      window.location.hash = pageId;
+      document.querySelectorAll('.page-content').forEach(el => el.classList.add('hidden'));
+      const activeEl = document.getElementById(`page-${pageId}`);
+      if (activeEl) {
+        activeEl.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Update Desktop Nav Active States
+      document.querySelectorAll('.nav-item').forEach(btn => {
+        if (btn.getAttribute('data-nav') === pageId) {
+          btn.classList.add('text-gold-600', 'bg-slate-100', 'dark:bg-slate-800');
+          btn.classList.remove('text-slate-700', 'dark:text-slate-300');
+        } else {
+          btn.classList.remove('text-gold-600', 'bg-slate-100', 'dark:bg-slate-800');
+          btn.classList.add('text-slate-700', 'dark:text-slate-300');
+        }
+      });
+    }
+
+    function handleHashNavigation() {
+      const hash = window.location.hash.replace('#', '') || 'home';
+      const validPages = ['home', 'about', 'academics', 'gallery', 'reviews', 'contact', 'auth', 'settings'];
+      if (validPages.includes(hash)) {
+        showPage(hash);
+      } else {
+        showPage('home');
+      }
+    }
+
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const icon = document.getElementById('mobileMenuIcon');
+      nav.classList.toggle('hidden');
+      if (nav.classList.contains('hidden')) {
+        icon.className = 'fa-solid fa-bars text-xl';
+      } else {
+        icon.className = 'fa-solid fa-xmark text-xl';
+      }
+    }
+
+    /* ==========================================================
+       THEME & ACCENT SETTINGS (Light / Dark / System & Presets)
+       ========================================================== */
+    function initTheme() {
+      const themeMode = localStorage.getItem('east_theme_mode') || 'system';
+      const accent = localStorage.getItem('east_theme_accent') || 'green';
+      setThemeMode(themeMode, false);
+      setAccentPreset(accent, false);
+    }
+
+    function setThemeMode(mode, save = true) {
+      const html = document.documentElement;
+      if (save) localStorage.setItem('east_theme_mode', mode);
+
+      if (mode === 'dark') {
+        html.classList.add('dark');
+      } else if (mode === 'light') {
+        html.classList.remove('dark');
+      } else {
+        // system
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          html.classList.add('dark');
+        } else {
+          html.classList.remove('dark');
+        }
+      }
+
+      // Update button highlights in settings
+      const btnLight = document.getElementById('themeBtnLight');
+      const btnDark = document.getElementById('themeBtnDark');
+      const btnSys = document.getElementById('themeBtnSystem');
+      if (btnLight && btnDark && btnSys) {
+        [btnLight, btnDark, btnSys].forEach(b => b.classList.remove('border-brand-900', 'border-gold-500', 'bg-slate-100', 'dark:bg-slate-800'));
+        if (mode === 'light') btnLight.classList.add('border-gold-500', 'bg-slate-100', 'dark:bg-slate-800');
+        if (mode === 'dark') btnDark.classList.add('border-gold-500', 'bg-slate-100', 'dark:bg-slate-800');
+        if (mode === 'system') btnSys.classList.add('border-gold-500', 'bg-slate-100', 'dark:bg-slate-800');
+      }
+      if (save) showToast(`Theme updated to ${mode} mode`);
+    }
+
+    function setAccentPreset(preset, save = true) {
+      const body = document.body;
+      if (save) localStorage.setItem('east_theme_accent', preset);
+
+      body.classList.remove('theme-accent-gold', 'theme-accent-blue');
+      if (preset === 'gold') body.classList.add('theme-accent-gold');
+      if (preset === 'blue') body.classList.add('theme-accent-blue');
+
+      // Update buttons
+      const bGreen = document.getElementById('accentBtnGreen');
+      const bGold = document.getElementById('accentBtnGold');
+      const bBlue = document.getElementById('accentBtnBlue');
+      if (bGreen && bGold && bBlue) {
+        [bGreen, bGold, bBlue].forEach(b => b.classList.remove('border-brand-900', 'border-gold-500', 'border-blue-600', 'bg-slate-100', 'dark:bg-slate-800'));
+        if (preset === 'green') bGreen.classList.add('border-brand-900', 'bg-emerald-50/50');
+        if (preset === 'gold') bGold.classList.add('border-gold-500', 'bg-amber-50/50');
+        if (preset === 'blue') bBlue.classList.add('border-blue-600', 'bg-blue-50/50');
+      }
+      if (save) showToast(`Palette accent changed to ${preset}`);
+    }
+
+    /* ==========================================================
+       AUTHENTICATION LOGIC (Real State, Validation & Firebase Bridge)
+       ========================================================== */
+    function renderAuthNav() {
+      const navContainer = document.getElementById('authNavContainer');
+      const mobContainer = document.getElementById('mobileAuthContainer');
+
+      if (currentAuthUser) {
+        const userHtml = `
+          <div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 py-1 px-2.5 rounded-full border border-slate-200 dark:border-slate-700">
+            <span class="w-6 h-6 rounded-full bg-brand-900 text-gold-300 flex items-center justify-center font-bold text-xs uppercase">
+              ${currentAuthUser.name ? currentAuthUser.name.charAt(0) : 'U'}
+            </span>
+            <span class="text-xs font-semibold text-slate-800 dark:text-slate-200 max-w-[100px] truncate">${currentAuthUser.name || currentAuthUser.email}</span>
+            <button onclick="handleSignOut()" title="Sign Out" class="text-slate-400 hover:text-red-500 text-xs ml-1">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+          </div>
+        `;
+        if (navContainer) navContainer.innerHTML = userHtml;
+        if (mobContainer) {
+          mobContainer.innerHTML = `
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-100 dark:bg-slate-800">
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300">${currentAuthUser.name || currentAuthUser.email}</span>
+              <button onclick="handleSignOut()" class="text-xs font-bold text-red-600">Sign Out</button>
+            </div>
+          `;
+        }
+        // Hide review form prompt
+        const prompt = document.getElementById('reviewFormAuthPrompt');
+        if (prompt) prompt.classList.add('hidden');
+        const authorField = document.getElementById('reviewAuthor');
+        if (authorField && !authorField.value) authorField.value = currentAuthUser.name || currentAuthUser.email;
+      } else {
+        const loginBtnHtml = `
+          <button onclick="showPage('auth')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 transition">
+            <i class="fa-solid fa-user-lock text-gold-600"></i>
+            <span>Sign In</span>
+          </button>
+        `;
+        if (navContainer) navContainer.innerHTML = loginBtnHtml;
+        if (mobContainer) {
+          mobContainer.innerHTML = `
+            <button onclick="showPage('auth'); toggleMobileNav()" class="w-full py-2.5 bg-brand-900 text-white rounded-lg text-xs font-bold text-center">
+              Sign In / Sign Up
+            </button>
+          `;
+        }
+      }
+    }
+
+    function switchAuthMode(mode) {
+      authMode = mode;
+      const title = document.getElementById('authTitle');
+      const subtitle = document.getElementById('authSubtitle');
+      const nameGroup = document.getElementById('nameFieldGroup');
+      const submitLabel = document.getElementById('authSubmitLabel');
+      const tabSignIn = document.getElementById('toggleSignInBtn');
+      const tabSignUp = document.getElementById('toggleSignUpBtn');
+      const alertBox = document.getElementById('authAlert');
+      alertBox.classList.add('hidden');
+
+      if (mode === 'signup') {
+        title.innerText = 'Create an Account';
+        subtitle.innerText = 'Join The East School & College Community';
+        nameGroup.classList.remove('hidden');
+        submitLabel.innerText = 'Sign Up';
+        tabSignUp.className = 'w-1/2 py-2 rounded-lg bg-white dark:bg-slate-900 text-brand-900 dark:text-white shadow-sm font-bold';
+        tabSignIn.className = 'w-1/2 py-2 rounded-lg text-slate-600 dark:text-slate-400 font-bold';
+      } else {
+        title.innerText = 'Welcome Back';
+        subtitle.innerText = 'Sign in to publish campus reviews and photos';
+        nameGroup.classList.add('hidden');
+        submitLabel.innerText = 'Sign In';
+        tabSignIn.className = 'w-1/2 py-2 rounded-lg bg-white dark:bg-slate-900 text-brand-900 dark:text-white shadow-sm font-bold';
+        tabSignUp.className = 'w-1/2 py-2 rounded-lg text-slate-600 dark:text-slate-400 font-bold';
+      }
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('authEmailInput').value.trim();
+      const password = document.getElementById('authPasswordInput').value;
+      const nameInput = document.getElementById('authNameInput').value.trim();
+      const alertBox = document.getElementById('authAlert');
+
+      // Firebase-like credential validations
+      if (!email.includes('@') || !email.includes('.')) {
+        showAuthError('auth/invalid-email: Please enter a valid email address.');
+        return;
+      }
+      if (password.length < 6) {
+        showAuthError('auth/weak-password: Password should be at least 6 characters.');
+        return;
+      }
+
+      // Simulate Firebase Auth execution
+      const userName = (authMode === 'signup' && nameInput) ? nameInput : email.split('@')[0];
+      currentAuthUser = {
+        name: userName,
+        email: email,
+        uid: 'user_' + Math.random().toString(36).substr(2, 9),
+        provider: 'password'
+      };
+
+      localStorage.setItem('east_school_user', JSON.stringify(currentAuthUser));
+      renderAuthNav();
+      alertBox.className = 'mb-4 p-3 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-300';
+      alertBox.innerText = authMode === 'signup' ? 'Account created successfully! Session initiated.' : 'Signed in successfully! Session authenticated.';
+      alertBox.classList.remove('hidden');
+
+      showToast(`Welcome, ${userName}!`);
+      setTimeout(() => {
+        showPage('reviews');
+      }, 1000);
+    }
+
+    function handleGoogleSignIn() {
+      // Simulate real OAuth popup flow
+      const simulatedGoogleUser = {
+        name: 'Sayed Jehangir',
+        email: 'sayed.student@gmail.com',
+        uid: 'google_' + Math.random().toString(36).substr(2, 9),
+        provider: 'google.com'
+      };
+      currentAuthUser = simulatedGoogleUser;
+      localStorage.setItem('east_school_user', JSON.stringify(currentAuthUser));
+      renderAuthNav();
+      showToast('Signed in with Google OAuth successfully!');
+      setTimeout(() => {
+        showPage('reviews');
+      }, 700);
+    }
+
+    function handleForgotPassword() {
+      const email = document.getElementById('authEmailInput').value.trim();
+      if (!email || !email.includes('@')) {
+        showAuthError('auth/missing-email: Please enter your email address in the field to receive password reset link.');
+        return;
+      }
+      showToast(`Password reset link sent to ${email}`);
+      const alertBox = document.getElementById('authAlert');
+      alertBox.className = 'mb-4 p-3 rounded-lg text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200';
+      alertBox.innerText = `Password reset email dispatched to ${email}. Check your inbox.`;
+      alertBox.classList.remove('hidden');
+    }
+
+    function showAuthError(msg) {
+      const alertBox = document.getElementById('authAlert');
+      alertBox.className = 'mb-4 p-3 rounded-lg text-xs font-semibold bg-red-50 text-red-800 border border-red-200';
+      alertBox.innerText = msg;
+      alertBox.classList.remove('hidden');
+    }
+
+    function handleSignOut() {
+      currentAuthUser = null;
+      localStorage.removeItem('east_school_user');
+      renderAuthNav();
+      showToast('Signed out of session');
+    }
+
+    function togglePasswordVisibility() {
+      const pw = document.getElementById('authPasswordInput');
+      const icon = document.getElementById('pwEyeIcon');
+      if (pw.type === 'password') {
+        pw.type = 'text';
+        icon.className = 'fa-solid fa-eye-slash';
+      } else {
+        pw.type = 'password';
+        icon.className = 'fa-solid fa-eye';
+      }
+    }
+
+    /* ==========================================================
+       GALLERY LOGIC (Viewing, Filter, and Protected Upload)
+       ========================================================== */
+    function renderGallery() {
+      const grid = document.getElementById('galleryGrid');
+      grid.innerHTML = '';
+
+      const filtered = activeFilter === 'all' 
+        ? galleryList 
+        : galleryList.filter(item => item.category === activeFilter);
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-400 text-xs">No photos available under this category.</div>`;
+        return;
+      }
+
+      filtered.forEach(photo => {
+        const card = document.createElement('div');
+        card.className = 'group relative rounded-2xl overflow-hidden shadow-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl';
+        card.innerHTML = `
+          <div class="h-52 w-full overflow-hidden relative">
+            <img src="${photo.imageUrl}" alt="${photo.title}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=800&auto=format&fit=crop';">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white text-xs font-semibold">${photo.title}</span>
+            </div>
+          </div>
+          <div class="p-4 flex items-center justify-between">
+            <div>
+              <h4 class="font-bold text-xs text-slate-800 dark:text-slate-100">${photo.title}</h4>
+              <span class="text-[10px] text-slate-400 capitalize"><i class="fa-solid fa-tag text-gold-500 mr-1"></i>${photo.category}</span>
+            </div>
+            <span class="text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded font-medium">Approved</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterGallery(category) {
+      activeFilter = category;
+      document.querySelectorAll('.gallery-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-brand-900', 'text-white');
+        btn.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+      });
+      event.target.classList.add('active', 'bg-brand-900', 'text-white');
+      event.target.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+      renderGallery();
+    }
+
+    function handleUploadClick() {
+      if (!currentAuthUser) {
+        showToast('Please sign in to upload photos');
+        showPage('auth');
+      } else {
+        openModal('uploadModal');
+      }
+    }
+
+    function setSamplePhoto(index) {
+      const urlInput = document.getElementById('uploadImageUrl');
+      if (index === 1) {
+        urlInput.value = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop';
+      } else {
+        urlInput.value = 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=800&auto=format&fit=crop';
+      }
+    }
+
+    function handlePhotoUpload(e) {
+      e.preventDefault();
+      if (!currentAuthUser) {
+        showToast('Session expired. Please sign in.');
+        showPage('auth');
+        return;
+      }
+      const title = document.getElementById('uploadTitle').value.trim();
+      const category = document.getElementById('uploadCategory').value;
+      const imageUrl = document.getElementById('uploadImageUrl').value.trim();
+
+      const newPhoto = {
+        id: 'gal-' + Date.now(),
+        title: title,
+        category: category,
+        imageUrl: imageUrl,
+        uploadedBy: currentAuthUser.name || currentAuthUser.email
+      };
+
+      galleryList.unshift(newPhoto);
+      localStorage.setItem('east_school_gallery', JSON.stringify(galleryList));
+      renderGallery();
+      closeModal('uploadModal');
+      showToast('Photo uploaded to campus gallery successfully!');
+      document.getElementById('photoUploadForm').reset();
+    }
+
+    /* ==========================================================
+       REVIEWS LOGIC (Star Picker, Validation, and Persistence)
+       ========================================================== */
+    function setRating(val) {
+      currentRating = val;
+      updateRatingUI(val);
+    }
+
+    function updateRatingUI(val) {
+      const stars = document.querySelectorAll('#starRatingSelector .star-btn');
+      stars.forEach((btn, index) => {
+        if (index < val) {
+          btn.className = 'star-btn text-amber-500 text-xl';
+        } else {
+          btn.className = 'star-btn text-slate-300 dark:text-slate-700 text-xl';
+        }
+      });
+      document.getElementById('ratingDisplay').innerText = `${val} Star${val > 1 ? 's' : ''}`;
+    }
+
+    function renderReviews() {
+      const container = document.getElementById('reviewsContainer');
+      container.innerHTML = '';
+
+      reviewsList.forEach(rev => {
+        const card = document.createElement('div');
+        card.className = 'bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-800 space-y-3';
+        
+        let starsHtml = '';
+        for (let i = 1; i <= 5; i++) {
+          starsHtml += `<i class="fa-solid fa-star ${i <= rev.stars ? 'text-amber-500' : 'text-slate-300 dark:text-slate-700'}"></i>`;
+        }
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-brand-900 text-gold-300 flex items-center justify-center font-bold text-xs uppercase shadow">
+                ${rev.author ? rev.author.charAt(0) : 'R'}
+              </div>
+              <div>
+                <h4 class="font-bold text-xs text-slate-900 dark:text-white">${rev.author}</h4>
+                <p class="text-[10px] text-slate-500">${rev.role || 'Verified Community Review'}</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-xs">${starsHtml}</div>
+              <span class="text-[10px] text-slate-400">${rev.date || 'Recent'}</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 pt-2">
+            "${rev.comment}"
+          </p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function handleReviewSubmit(e) {
+      e.preventDefault();
+      if (!currentAuthUser) {
+        document.getElementById('reviewFormAuthPrompt').classList.remove('hidden');
+        showToast('Please sign in to publish a review');
+        showPage('auth');
+        return;
+      }
+
+      const author = document.getElementById('reviewAuthor').value.trim();
+      const text = document.getElementById('reviewText').value.trim();
+
+      // Empty or abusive post validation rule
+      if (text.length < 10) {
+        showToast('Review comment is too short. Please write at least 10 characters.');
+        return;
+      }
+      const abusiveWords = ['spam', 'abuse', 'fake', 'scam'];
+      const hasAbuse = abusiveWords.some(w => text.toLowerCase().includes(w));
+      if (hasAbuse) {
+        showToast('Abusive or prohibited content is blocked by campus rules.');
+        return;
+      }
+
+      const newReview = {
+        id: 'rev-' + Date.now(),
+        author: author || currentAuthUser.name || 'Parent',
+        role: 'Community Member',
+        stars: currentRating,
+        date: 'Just now',
+        comment: text
+      };
+
+      reviewsList.unshift(newReview);
+      localStorage.setItem('east_school_reviews', JSON.stringify(reviewsList));
+      renderReviews();
+      document.getElementById('reviewText').value = '';
+      showToast('Thank you! Your review has been published.');
+    }
+
+    /* ==========================================================
+       CONTACT FORM SUBMIT
+       ========================================================== */
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      showToast('Inquiry sent! Office will call you at +92 923 510760.');
+      e.target.reset();
+    }
+
+    /* ==========================================================
+       AI ASSISTANT CHAT ENGINE
+       ========================================================== */
+    let chatSessionHistory = [];
+
+    function toggleChatWindow() {
+      const chat = document.getElementById('chatWindow');
+      chat.classList.toggle('hidden');
+      if (!chat.classList.contains('hidden')) {
+        document.getElementById('chatInput').focus();
+      }
+    }
+
+    function openChat() {
+      const chat = document.getElementById('chatWindow');
+      chat.classList.remove('hidden');
+      document.getElementById('chatInput').focus();
+    }
+
+    function sendQuickPrompt(promptText) {
+      document.getElementById('chatInput').value = promptText;
+      document.getElementById('chatForm').dispatchEvent(new Event('submit', { cancelable: true }));
+    }
+
+    async function handleChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('chatInput');
+      const userText = input.value.trim();
+      if (!userText) return;
+
+      appendChatMessage('user', userText);
+      input.value = '';
+
+      // Show typing indicator
+      const typing = document.getElementById('chatTyping');
+      typing.classList.remove('hidden');
+      scrollChatToBottom();
+
+      // Generate response adhering strictly to the system prompt
+      setTimeout(async () => {
+        const responseText = await generateAiResponse(userText);
+        typing.classList.add('hidden');
+        appendChatMessage('assistant', responseText);
+        scrollChatToBottom();
+      }, 700);
+    }
+
+    function appendChatMessage(sender, text) {
+      const container = document.getElementById('chatMessages');
+      const msgDiv = document.createElement('div');
+      
+      if (sender === 'user') {
+        msgDiv.className = 'flex justify-end';
+        msgDiv.innerHTML = `
+          <div class="bg-brand-900 text-white p-3 rounded-2xl rounded-tr-none max-w-[85%] shadow-sm leading-relaxed">
+            ${escapeHtml(text)}
+          </div>
+        `;
+      } else {
+        msgDiv.className = 'flex items-start gap-2';
+        msgDiv.innerHTML = `
+          <img src="https://www.designarena.ai/u/9ff610f1-1d46-456f-8e68-e226f1304fef" alt="Logo" class="w-6 h-6 rounded-full object-contain flex-shrink-0 mt-0.5">
+          <div class="bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-200 dark:border-slate-700 max-w-[85%] leading-relaxed">
+            ${text}
+          </div>
+        `;
+      }
+      container.appendChild(msgDiv);
+    }
+
+    function scrollChatToBottom() {
+      const container = document.getElementById('chatMessages');
+      container.scrollTop = container.scrollHeight;
+    }
+
+    // System Prompt Engine for Eastern Star Assistant
+    async function generateAiResponse(query) {
+      const q = query.toLowerCase();
+
+      // If user configured live API key in settings
+      const userKey = localStorage.getItem('east_ai_key');
+      const provider = localStorage.getItem('east_ai_provider') || 'builtin';
+
+      if (userKey && provider !== 'builtin') {
+        try {
+          return await callExternalAiApi(provider, userKey, query);
+        } catch (err) {
+          console.warn('External API call failed, falling back to built-in knowledge base:', err);
+        }
+      }
+
+      // Built-in Knowledge Base logic adhering strictly to instructions
+      if (q.includes('coordinator') || q.includes('azmat') || q.includes('poet') || q.includes('m. a. jehangir') || q.includes('founder')) {
+        return "Muhammad Azmat Jehangir (M. A. Jehangir) was the System Coordinator. He worked extensively for The East School & College Jehangira, supported school systems and events, and addressed programmes including the Annual Awards. He was also honoured by a famous Pashto poet.";
+      }
+
+      if (q.includes('ceo') || q.includes('niaz') || q.includes('head of institution')) {
+        return "The Head of Institution / CEO is <strong>Mr Niaz Hussain</strong>. Under his leadership, the school advances its vision of academic rigor anchored in Islamic values.";
+      }
+
+      if (q.includes('principal') || q.includes('ihtisham')) {
+        return "The Principal of The East School & College Jehangira is <strong>Mr Ihtisham ul Haq</strong>. He oversees academic curriculum, board preparations, and teacher supervision.";
+      }
+
+      if (q.includes('contact') || q.includes('phone') || q.includes('number') || q.includes('call') || q.includes('email') || q.includes('address') || q.includes('location')) {
+        return "You can reach us at:<br>&bull; <strong>Address:</strong> Swabi Road, Jehangira, Nowshera, Khyber Pakhtunkhwa<br>&bull; <strong>Phone:</strong> +92 923 510760<br>&bull; <strong>Email:</strong> eastjehangira@yahoo.com";
+      }
+
+      if (q.includes('separate') || q.includes('boy') || q.includes('girl') || q.includes('gender') || q.includes('islamic')) {
+        return "Yes. In strict accordance with Islamic principles and family values, boys and girls study in <strong>separate buildings</strong> across our purpose-built campus in Jehangira.";
+      }
+
+      if (q.includes('section') || q.includes('class') || q.includes('college') || q.includes('curriculum') || q.includes('board') || q.includes('peshawar') || q.includes('kpk')) {
+        return "The school features <strong>Junior, Middle, and Higher/College sections</strong> across multiple buildings. All Board classes follow the official curriculum of the <strong>Khyber Pakhtunkhwa Textbook Board, Peshawar</strong> for Matriculation and Intermediate (F.Sc Pre-Medical, Pre-Engineering, and ICS).";
+      }
+
+      if (q.includes('fee') || q.includes('cost') || q.includes('admission date') || q.includes('private staff') || q.includes('salary')) {
+        return "For specific fee structures, concessions, private staff records, or exact current admission dates, please contact our administration office directly at <strong>+92 923 510760</strong> or email <strong>eastjehangira@yahoo.com</strong>.";
+      }
+
+      if (q.includes('weather') || q.includes('date') || q.includes('board date') || q.includes('exam date')) {
+        return "For current public facts such as KP board examination schedules or regional weather, information from web sources indicates exams typically align with BISE Peshawar calendars. <em>Note: this public web source information may change, so please confirm with the office.</em>";
+      }
+
+      // Default comprehensive response
+      return "The East School & College Jehangira is located on Swabi Road, Jehangira, Nowshera. Our mission is <em>quality education in the light of Islamic values</em> with separate buildings for boys and girls, affiliated with the KP Textbook Board Peshawar. For admissions and inquiries, please phone <strong>+92 923 510760</strong>.";
+    }
+
+    async function callExternalAiApi(provider, key, userText) {
+      if (provider === 'groq') {
+        const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}` },
+          body: JSON.stringify({
+            model: 'llama-3.1-8b-instant',
+            messages: [
+              { role: 'system', content: 'You are Eastern Star Assistant for The East School & College Jehangira, Nowshera, Pakistan. Address: Swabi Road, Jehangira. Phone: +92 923 510760. Mission: quality education in the light of Islamic values. CEO: Mr Niaz Hussain, Principal: Mr Ihtisham ul Haq, System Coordinator: Muhammad Azmat Jehangir (honoured by a famous Pashto poet). Curriculum: KPK Textbook Board Peshawar. Boys and girls study in separate buildings.' },
+              { role: 'user', content: userText }
+            ]
+          })
+        });
+        const data = await res.json();
+        return data.choices[0].message.content;
+      }
+      throw new Error('Fallback to built-in');
+    }
+
+    function saveAiKeySettings() {
+      const provider = document.getElementById('aiProviderSelect').value;
+      const key = document.getElementById('userAiKey').value.trim();
+      localStorage.setItem('east_ai_provider', provider);
+      if (key) {
+        localStorage.setItem('east_ai_key', key);
+        showToast('AI Provider Key saved');
+      } else {
+        localStorage.removeItem('east_ai_key');
+        showToast('Using Built-in Campus Knowledge Model');
+      }
+      closeModal('aiSettingsModal');
+    }
+
+    /* ==========================================================
+       UTILITIES & MODALS
+       ========================================================== */
+    function openModal(id) {
+      const m = document.getElementById(id);
+      if (m) m.classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      const m = document.getElementById(id);
+      if (m) m.classList.add('hidden');
+    }
+
+    function showToast(message) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast-slide pointer-events-auto bg-brand-950 text-white border border-gold-400 px-4 py-2.5 rounded-xl shadow-2xl text-xs flex items-center gap-2 max-w-sm';
+      toast.innerHTML = `<i class="fa-solid fa-circle-check text-gold-400"></i> <span>${escapeHtml(message)}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.remove();
+      }, 3500);
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('.env template copied to clipboard');
+      }).catch(() => {
+        showToast('Failed to copy');
+      });
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+  </script>
+</body>
+</html>
